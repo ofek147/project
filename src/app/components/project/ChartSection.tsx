@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { ChartWrapper } from "./Wrappers";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "./Tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../Tabs";
 
 const ChartSection = () => {
   const [activeTab, setActiveTab] = useState("teken32");
@@ -23,20 +23,20 @@ const ChartSection = () => {
 
           <div className="pt-4">
             <div>
-              <Tabs dir="rtl" value={activeTab} onValueChange={setActiveTab}>
+              <Tabs dir="rtl" value={activeTab} onValueChange={setActiveTab} className="">
                 <div className="flex justify-center">
                   <TabsList className="flex bg-gray-200 w-fit">
                     <div className="gap-1">
-                      <TabsTrigger value="teken32">בדיקות היתכנות</TabsTrigger>
+                      <TabsTrigger className="" value="teken32">בדיקות היתכנות</TabsTrigger>
 
-                      <TabsTrigger value="teken22">תכנון ראשוני</TabsTrigger>
+                      <TabsTrigger className="" value="teken22">תכנון ראשוני</TabsTrigger>
 
-                      <TabsTrigger value="teken21">כניסה לותמ״ל</TabsTrigger>
+                      <TabsTrigger className="" value="teken21">כניסה לותמ״ל</TabsTrigger>
                     </div>
                   </TabsList>
                 </div>
 
-                <TabsContent value="teken32">
+                <TabsContent className="" value="teken32">
                   <div>
                     <h2 className="text-xl font-medium mb-2">
                       תקן 22 - הערכת שווי זכויות במקרקעין
@@ -48,7 +48,7 @@ const ChartSection = () => {
                   </div>
                 </TabsContent>
 
-                <TabsContent value="teken22">
+                <TabsContent className="" value="teken22">
                   <div>
                     <h2 className="text-xl font-medium mb-2">
                       תקן 22 - הערכת שווי זכויות במקרקעין
@@ -57,7 +57,7 @@ const ChartSection = () => {
                   </div>
                 </TabsContent>
 
-                <TabsContent value="teken21">
+                <TabsContent className="" value="teken21">
                   <div>
                     <h2 className="text-xl font-medium mb-2">
                       תקן 22 - הערכת שווי זכויות במקרקעין
