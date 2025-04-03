@@ -1,20 +1,8 @@
 import { Building2, ShoppingBag, Trees } from "lucide-react";
-
-interface ProjectDetails {
-  area_size: string;
-  residence: string;
-  employment: string;
-}
-
-interface Project {
-  title: string;
-  description: string;
-  progress_description: string;
-  details: ProjectDetails[];
-}
+import { Project } from "@/app/data/projects";
 
 interface AboutProjectProps {
-  project: Project; // או סוג מתאים
+  project: Project;
 }
 
 const AboutSection = ({ project }: AboutProjectProps) => {
@@ -24,19 +12,19 @@ const AboutSection = ({ project }: AboutProjectProps) => {
       icon: Trees,
       title: "שטח הפרויקט",
       value: `${details.area_size} דונם`,
-      color: "lime"
+      color: "lime",
     },
     {
       icon: Building2,
       title: "מגורים",
       value: `${details.residence} מ"ר`,
-      color: "blue"
+      color: "blue",
     },
     {
       icon: ShoppingBag,
       title: "מסחר ותעסוקה",
       value: `${details.employment} דונם`,
-      color: "gold"
+      color: "gold",
     },
   ];
 
@@ -61,7 +49,10 @@ const AboutSection = ({ project }: AboutProjectProps) => {
                   className="shadow-[0_10px_15px_-3px_rgba(0,0,0,0.3),_0_4px_6px_-2px_rgba(0,0,0,0.05)] border-2 rounded-xl p-5"
                 >
                   <div className="p-6 text-center">
-                    <card.icon className="w-14 h-14 mx-auto" color={card.color}/>
+                    <card.icon
+                      className="w-14 h-14 mx-auto"
+                      color={card.color}
+                    />
                     <h3 className="text-2xl text-black font-medium">
                       {card.title}
                     </h3>

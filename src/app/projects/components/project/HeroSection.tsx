@@ -1,11 +1,6 @@
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
-
-interface Project {
-  status: string;
-  name: string;
-  under_name: string;
-}
+import { Project } from "@/app/data/projects";
 
 interface HeroSectionProps {
   project: Project;

@@ -5,7 +5,7 @@ import HeroSection from "@/app/components/home/HeroSection";
 import StatsSection from "@/app/components/home/StatsSection";
 import BenefitsSection from "@/app/components/home/BenefitsSection";
 import UniquePartnershipSection from "@/app/components/home/UniquePartnershipSection";
-import ContactUs from "./components/home/ContactUs";
+import ContactUs from "./components/home/ContactSection";
 
 const inter = Inter({ subsets: ["latin"] });
 

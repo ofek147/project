@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { ChartWrapper } from "./Wrappers";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../Tabs";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/app/components/Tabs";
 
 const ChartSection = () => {
   const [activeTab, setActiveTab] = useState("teken32");
@@ -23,15 +23,26 @@ const ChartSection = () => {
 
           <div className="pt-4">
             <div>
-              <Tabs dir="rtl" value={activeTab} onValueChange={setActiveTab} className="">
+              <Tabs
+                dir="rtl"
+                value={activeTab}
+                onValueChange={setActiveTab}
+                className=""
+              >
                 <div className="flex justify-center">
-                  <TabsList className="flex bg-gray-200 w-fit">
+                  <TabsList className="flex bg-gray-200 w-fit ">
                     <div className="gap-1">
-                      <TabsTrigger className="" value="teken32">בדיקות היתכנות</TabsTrigger>
+                      <TabsTrigger className="" value="teken32">
+                        בדיקות היתכנות
+                      </TabsTrigger>
 
-                      <TabsTrigger className="" value="teken22">תכנון ראשוני</TabsTrigger>
+                      <TabsTrigger className="" value="teken22">
+                        תכנון ראשוני
+                      </TabsTrigger>
 
-                      <TabsTrigger className="" value="teken21">כניסה לותמ״ל</TabsTrigger>
+                      <TabsTrigger className="" value="teken21">
+                        כניסה לותמ״ל
+                      </TabsTrigger>
                     </div>
                   </TabsList>
                 </div>

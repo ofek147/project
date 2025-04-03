@@ -1,16 +1,6 @@
 import React from "react";
 import { MapWrapper } from "./Wrappers";
-
-interface Coordinate {
-  lat: number;
-  lng: number;
-}
-
-interface Project {
-  id: number;
-  coordinates: Coordinate[];
-  center: Coordinate;
-}
+import { Project } from "@/app/data/projects";
 
 interface MapSectionProps {
   project: Project;

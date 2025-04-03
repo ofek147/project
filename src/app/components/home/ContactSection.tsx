@@ -1,7 +1,7 @@
 import { ArrowLeft, Check } from "lucide-react";
 import Link from "next/link";
 
-const ContactUs = () => {
+const ContactSection = () => {
   return (
     <section className="py-10">
       <div className="max-w-2xl mx-auto px-4">
@@ -71,4 +71,4 @@ const ContactUs = () => {
   );
 };
 
-export default ContactUs;
+export default ContactSection;

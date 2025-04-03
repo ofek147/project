@@ -2,10 +2,10 @@
 
 import { useParams } from "next/navigation";
 import projects from "@/app/data/projects";
-import HeroSection from "@/app/components/project/HeroSection";
-import AboutSection from "@/app/components/project/AboutSection";
-import MapSection from "@/app/components/project/MapSection";
-import ChartSection from "@/app/components/project/ChartSection";
+import HeroSection from "../components/project/HeroSection";
+import AboutSection from "../components/project/AboutSection";
+import MapSection from "../components/project/MapSection";
+import ChartSection from "../components/project/ChartSection";
 
 const Project = () => {
   const params: { slug: string } = useParams();
