@@ -22,6 +22,16 @@ interface RechartsChartProps {
   className?: string;
 }
 
+interface TooltipPayloadItem {
+  stroke: string;
+  strokeWidth: number;
+  datakey: string;
+  color: string;
+  hide: boolean;
+  name: string;
+  value: number;
+}
+
 const RechartsChart = ({ data = defaultData }: RechartsChartProps) => {
   const formatNumberWithCommas = (number: number) => {
     return number.toLocaleString("en-US");
@@ -33,7 +43,7 @@ const RechartsChart = ({ data = defaultData }: RechartsChartProps) => {
     label,
   }: {
     active?: boolean;
-    payload?: any[];
+    payload?: TooltipPayloadItem[];
     label?: string;
   }) => {
     if (active && payload && payload.length) {
@@ -45,7 +55,7 @@ const RechartsChart = ({ data = defaultData }: RechartsChartProps) => {
               key={index}
               className="flex justify-between items-center gap-2"
             >
-              <span className="font-semibold" style={{ color: entry.color }}>
+              <span className="font-semibold" style={{ color: entry.stroke }}>
                 {formatNumberWithCommas(entry.value)}
               </span>
             </div>
@@ -56,9 +66,16 @@ const RechartsChart = ({ data = defaultData }: RechartsChartProps) => {
     return null;
   };
 
-  const CustomActiveDot = (props: any) => {
-    const { cx, cy, fill } = props;
-    return <circle cx={cx} cy={cy} r={5} fill={fill} strokeWidth={2} />;
+  const CustomActiveDot = (props: unknown) => {
+    if (typeof props === "object" && props !== null) {
+      const { cx, cy, fill } = props as {
+        cx: number;
+        cy: number;
+        fill: string;
+      };
+      return <circle cx={cx} cy={cy} r={5} fill={fill} strokeWidth={2} />;
+    }
+    return <circle cx={0} cy={0} r={0} fill="none" strokeWidth={0} />;
   };
 
   const maxValue = Math.max(
